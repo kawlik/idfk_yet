@@ -1,0 +1,15 @@
+section.board {
+@include stdFlex(column, nowrap, flex-end);
+
+    flex-grow: 1;
+    padding: 15vh 0;
+    width: 100%;
+    
+    background: $colorMainLight;
+    border: $widthPlayer/4 solid $colorSecondary;
+    position: relative;
+
+    border-bottom-left-radius: $widthPlayer;
+    border-bottom-right-radius: $widthPlayer;
+    box-shadow: 0 0 20px -2px $colorSecondary inset;
+}

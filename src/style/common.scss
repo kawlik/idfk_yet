@@ -1,0 +1,165 @@
+/*  Variables   */
+
+
+$colorFont: #343a40;
+$colorActive: #ff4500;
+$colorMainDark: #000000;
+$colorMainLight: #F5F5F5;
+$colorPrimary: #FFD205;
+$colorSecondary: #999999;
+
+
+$borderThin: 1px;
+$borderMedium: 3px;
+$borderThick: 5px;
+
+
+$heightMenu: 72px;
+
+
+$marginSmall: 5px;
+$marginMedium: 10px;
+$marginBig: 20px;
+
+
+$paddingSmall: 5px;
+$paddingMedium: 10px;
+$paddingBig: 20px;
+
+
+$radiusSmall: 3px;
+$radiusMedium: 5px;
+$radiusBig: 15px;
+$radiusMax: 100px;
+
+
+$transitionShort: 0.2s;
+$transitionMedium: 0.4s;
+$transitionLong: 0.8s;
+$transitionVeryLong: 1.6s;
+
+
+$widthPlayer: 36px;
+
+
+/*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+/*  Standards   */
+
+
+@mixin stdBorder($color: $colorFont, $radius: $radiusMedium, $width: $borderThin) {
+    border: $color solid $width;
+    border-radius: $radius;
+}
+
+
+@mixin stdFlex($direct: row, $wrap: wrap, $jutify: flex-start, $alignI: center, $alignC: center) {
+    display: flex;
+    flex-direction: $direct;
+    flex-wrap: $wrap;
+    justify-content: $jutify;
+    align-items: $alignI;
+    align-content: $alignC;
+}
+
+
+@mixin stdText($color: $colorMainDark, $align: justify, $decor: none, $trans: none, $space: 0) {
+    color: $color;
+    text-align: $align;
+    text-decoration: $decor;
+    text-transform: $trans;
+    letter-spacing: $space;
+}
+
+
+@mixin stdTransition($prop: all, $timing: ease-in-out, $durat: $transitionShort, $delay: 0) {
+    transition-property: $prop;
+    transition-timing-function: $timing;
+    transition-duration: $durat;
+    transition-delay: $delay;
+}
+
+/*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+/*  Animations  */
+
+@keyframes jumpIn {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    75% {
+        opacity: 1;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes easeIn {
+
+    0% {
+        opacity: 0;
+        transform: translateY(150px) scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0) scale(1.05);
+    }
+
+    75% {
+        opacity: 1;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+/*  Breakpoints */
+
+@media (max-width: 576px) {
+
+}
+
+/*   *   *   *   *   *   *   *   *   *   */
+
+@media (min-width: 577px) and (max-width: 767px) {
+
+}
+
+/*   *   *   *   *   *   *   *   *   *   */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/*   *   *   *   *   *   *   *   *   *   */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/*   *   *   *   *   *   *   *   *   *   */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+}
+
+/*   *   *   *   *   *   *   *   *   *   */
+
+@media (min-width: 1400px) {
+
+}

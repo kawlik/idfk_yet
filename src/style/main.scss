@@ -1,0 +1,51 @@
+@import 'common';
+
+/*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+
+* {
+    background: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: $colorSecondary;
+
+    font-family: 'Lato', sans-serif;
+    font-size: medium;
+    font-weight: 300;
+    color: $colorFont;
+
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#root {
+@include stdFlex(column, nowrap);
+    
+    height: 100%;
+}
+
+a:link      {color: $colorFont; text-decoration: none;}
+a:visited   {color: $colorFont; text-decoration: none;}
+a:active    {color: $colorFont; text-decoration: none;}
+a:hover     {color: $colorFont; text-decoration: none;}
+
+
+/*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+/*  Components  */
+
+@import './component/board';
+
+@import './component/menu';
+
+@import './component/shapes';
+
+/*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+/*  Layout      */

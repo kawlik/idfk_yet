@@ -1,0 +1,104 @@
+div.player {
+@include stdTransition();
+
+    position: relative;
+    height: $widthPlayer;
+    width: $widthPlayer;
+
+    background: $colorActive;
+    border-radius: $radiusMedium;
+    box-shadow: 0 0 8px $colorActive;
+
+    span {
+        position: absolute;
+        right: 3px;
+        top: 3px;
+
+        padding: 4px;
+        background: white;
+        border-radius: $radiusMax;
+        overflow: hidden;
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            transform: translateX(-50%) translateY(-50%);
+            padding: 1px;
+
+            background: black;
+            border-radius: $radiusMax;
+            box-shadow: 0 0 1px 0.5px green;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            transform: translateX(-50%) translateY(50%);
+            box-shadow: 0 -16px 0 $colorActive;
+            padding: 4px;
+
+            background: $colorActive;
+            border-radius: $radiusMax;
+
+            animation: eyeBlink;
+            animation-duration: 3s;
+            animation-fill-mode: both;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+}
+
+/*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+
+div.spike {
+
+    position: absolute;
+    top: 0;
+
+    border-top: 0.75*$widthPlayer/2 solid transparent;
+    border-bottom: 0.75*$widthPlayer/2 solid transparent;
+
+    &.__left {border-left: 0.75*$widthPlayer solid $colorSecondary; left: 0;}
+    &.__right {border-right: 0.75*$widthPlayer solid $colorSecondary; right: 0;}
+
+    animation: slideDown;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+/*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   */
+/*  Animations  */
+
+
+@keyframes eyeBlink {
+    0% {
+        transform: translateX(-50%) translateY(50%);
+            box-shadow: 0 -16px 0 $colorActive;
+    }
+
+    98% {
+        transform: translateX(-50%) translateY(50%);
+            box-shadow: 0 -16px 0 $colorActive;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%);
+            box-shadow: 0 0 0 $colorActive;
+    }
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(100vh);
+    }
+}
